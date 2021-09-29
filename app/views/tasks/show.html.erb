@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-between">
+<h1><%= @task.title %></h1>
+<div class="text-right">
+<button class="btn btn-light"><%= link_to "Edit Task", edit_path %></button>
+</div>
+</div>
+<div class="p-2 list-group-item-dark">
+<p><%= @task.details %></p>
+</div>
+<div class="pt-2">
+<% if @task.completed %>
+<i class="fas fa-check-square"></i><% message = "This task is completed" %>
+<% else %>
+<i class="far fa-square"></i><%message = "This task is not completed yet" %>
+<% end %>
+<%= message %>
+</div>
+<p class="pt-2"><%= link_to "Back to list", tasks_path %></p>
